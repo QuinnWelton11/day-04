@@ -113,6 +113,17 @@ nav a {
 	background-color: #234723;
 }
 
+@media (min-width: 50em) {
+
+	.services article {
+		background-color: #caebff;
+	}
+
+	.services a {
+		background-color: #346270;
+	}
+
+}
 
 /* Testimonials Styles */
 .testimonials img {
