@@ -125,7 +125,20 @@ nav a {
 
 	.cards {
 		display: flex;
-		flex-direction: column;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+		/* flex-direction: column; */
+		/* flex-direction: column-reverse; */
+		/* flex-direction: row-reverse; */
+	}
+
+	.cards article {
+		flex: 0 1 30%;
+	}
+
+	.cards .service-1 {
+		flex: 0 1 50%;
+		order: 1;
 	}
 
 }
@@ -145,4 +158,20 @@ nav a {
 .testimonials blockquote p {
 	display: inline-block;
 	margin: 0;
+}
+
+@media (min-width: 37.5em) {
+	.testimonials {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+	}
+
+	.testimonials > *:not(article) {
+		width: 100%;
+	}
+
+	.testimonials article {
+		max-width: 20rem;
+	}
 }
