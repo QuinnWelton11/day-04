@@ -123,6 +123,11 @@ nav a {
 		background-color: #346270;
 	}
 
+	.cards {
+		display: flex;
+		flex-direction: column;
+	}
+
 }
 
 /* Testimonials Styles */
