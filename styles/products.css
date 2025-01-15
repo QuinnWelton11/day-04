@@ -83,54 +83,54 @@ a:focus {
 
 /* Header
 --------------------------------------------- */
+
+
+/* START -- STYLES FOR MOBILE MENU */
+/* we will cover this more later */
 @media (min-width: 20em) {
 	.site-header {
 		display: flex;
 		flex-direction: row;
-        justify-content: space-around;
+		justify-content: space-around;
 		padding: 1rem;
 		/* add flex styles here */
 	}
-
+	
 	.site-header .site-name {
 		color: black;
 		font-family: serif;
 		font-size: 2.25rem;
 		padding-top: .25rem;
 	}
-}
 	
-.site-logo {
-	max-width: 6rem;
-	margin: 1rem;
-}
+	.site-logo {
+		max-width: 6rem;
+		margin: 1rem;
+	}
+	
+	.site-logo img {
+		display: block;
+	}
+	
+	.site-navigation {
+		padding: 0 1rem;
+	}
+	
+	.site-navigation ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		text-align: center;
+	}
+	
+	.site-navigation a {
+		display: block;
+		padding: 1rem;
+		font-size: 1.25rem;
+		text-decoration: none;
+		text-transform: uppercase;
+	}
 
-.site-logo img {
-	display: block;
-}
-
-.site-navigation {
-	padding: 0 1rem;
-}
-
-.site-navigation ul {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-	text-align: center;
-}
-
-.site-navigation a {
-	display: block;
-	padding: 1rem;
-	font-size: 1.25rem;
-	text-decoration: none;
-	text-transform: uppercase;
-}
-
-/* START -- STYLES FOR MOBILE MENU */
-/* we will cover this more later */
-@media (min-width: 20em) {
 	.site-navigation ul {
 		display: none;
 		position: absolute;
@@ -138,7 +138,7 @@ a:focus {
 		left: 0;
 		right: 0;
 		z-index: 2;
-		background-color: #ffe6bf;
+		
 	}
 	
 	.menu-toggle {
@@ -157,19 +157,29 @@ a:focus {
 		display: block;
 	}
 }
-	/* START OF TABLET MENU */
-@media (min-width: 43.75em) {
-		
-		.menu-toggle {
-			display: none;
-		}
-		
-		
-		.site-navigation {
-			padding: 0 1rem;
-			/* add flex styles here */
+
+/* START OF DESKTOP MENU */
+@media (min-width: 90em) {
+	.menu-toggle {
+		display: none;
 	}
 
+	.site-navigation {
+		display: flex;
+		justify-content: flex-end;
+		width: 100%;
+	}
+
+	.site-navigation a {
+		line-height: 4.5rem; /* Matches the height of the .site-logo: 6rem + 1rem + 1rem */
+		padding: 0 1rem;
+		
+		color: black;
+	}
+
+	.site-navigation li {
+	}
+	
 	.site-navigation ul,
 	.site-navigation.toggled ul {
 		/* add flex styles here */
@@ -179,58 +189,53 @@ a:focus {
 		top: 0;
 		/* END - Remove Mobile Menu Styles  */
 	}
-
-	.site-navigation a {
-		line-height: 4.5rem; /* Matches the height of the .site-logo: 6rem + 1rem + 1rem */
-		padding: 0 1rem;
-	}
-/* END OF TABLET MENU */
-}
-
-/* START OF DESKTOP MENU */
-@media (min-width: 90em) {
-	.site-navigation ul {
-		display: flex;
-	}
-
 }
 
 /* Main
 --------------------------------------------- */
 /* Page Header */
-.page-header {
-	position: relative;
-}
+@media (min-width: 20em) {
 
-.page-header h1 {
-	position: absolute;
-	top: 50%;
-	left: 0;
-	right: 0;
-	z-index: 1;
-	transform: translateY(-50%);
-	margin: 0;
-	font-size: 3rem;
-	color: #fff;
-	text-transform: uppercase;
-	text-align: center;
-}
-
-.page-header img {
-	display: block;
-	object-fit: cover;
-	min-height: 25rem;
+	.page-header {
+		position: relative;
+	}
+	
+	.page-header h1 {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		right: 0;
+		z-index: 1;
+		transform: translateY(-50%);
+		margin: 0;
+		font-size: 3rem;
+		color: #fff;
+		text-transform: uppercase;
+		text-align: center;
+	}
+	
+	.page-header img {
+		display: block;
+		object-fit: cover;
+		min-height: 25rem;
+	}
 }
 
 @media (min-width: 50em) {
-
+	
 	.page-header h1 {
 		font-size: 5rem;
 	}
 	
 }
 
-/* Section: About */
+@media (min-width: 90em) {
+
+	.page-header h1 {
+		font-size: 2rem;
+	}
+}
+	/* Section: About */
 @media (min-width: 20em) {
 	
 	.section-about {
@@ -239,6 +244,23 @@ a:focus {
 		justify-content: center;
         line-height: 2rem;
 	}
+}
+
+@media (min-width: 90em) {
+	
+	.section-about {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+        line-height: 2rem;
+		margin-top: 2rem;
+	}
+
+}
+
+
+/* Section: Products */
+@media (min-width: 20em) {
 
 	.products-wrapper .product {
 		display: flex;
@@ -250,7 +272,7 @@ a:focus {
 		text-align: center;
         line-height: 1rem;
     }
-
+	
 	.product .product-link {
 		display: flex;
 		justify-content: center;
@@ -261,25 +283,52 @@ a:focus {
 		margin-bottom: 1rem;
 		padding: 1rem;
 	}
-
+	
 	.section-products .products-sidebar {
 		display: flex;
 		flex-direction: column;
 		flex-wrap: wrap;
 	}
 
-	
+	.products-sidebar ul {
+		padding-left: 2rem;
+        line-height: 1.5rem;
+	}
+
+	.products-sidebar h2 {
+		margin-bottom: 0;
+	}
+
 }
 
 @media (min-width: 90em) {
-	
 
-	.page-header h1 {
-		font-size: 2rem;
-	}
-
-	.section-about {
+	.products-wrapper .product {
 		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		border: .125rem solid #a7a7a754;
+		box-shadow: #282828;
+		margin-bottom: 1.25rem;
+		text-align: center;
+        line-height: 1rem;
+    }
+	
+	.product .product-link {
+		display: flex;
+		justify-content: center;
+		max-width: 50%;
+		background-color: #008000;
+		color: #ffffff;
+		margin: 0 auto;
+		margin-bottom: 1rem;
+		padding: 1rem;
+	}
+	
+	.section-products .products-sidebar {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
 	}
 
 	.section-products {
@@ -305,8 +354,6 @@ a:focus {
 		margin: 1rem;
 	}
 }
-/* Section: Products */
-
 
 
 /* Footer
@@ -324,6 +371,18 @@ a:focus {
 	
 	.site-footer ul {
 		padding-left: 0;
+	}
+
+}
+
+@media (min-width: 90em) {
+	.site-footer{
+		display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 3rem;
+		margin-top: 2rem;
 	}
 
 }
